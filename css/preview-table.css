@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Preview Table & Data Inspector CSS (High Density & Performance)
+   Preview Table & Data Inspector CSS (Lovely Pink Edition)
    ========================================================================== */
 .table-toolbar {
   display: flex;
@@ -14,7 +14,7 @@
   position: relative;
   flex: 1;
   min-width: 200px;
-  max-width: 320px;
+  max-width: 340px;
 }
 
 .table-search-icon {
@@ -22,13 +22,13 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-muted);
+  color: var(--secondary-pink);
   pointer-events: none;
 }
 
 .table-search-input {
   width: 100%;
-  padding: 6px 10px 6px 30px;
+  padding: 7px 10px 7px 32px;
   background: var(--bg-main);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -40,7 +40,11 @@
 
 .table-search-input:focus {
   border-color: var(--border-focus);
-  box-shadow: 0 0 0 2px var(--border-glow);
+  box-shadow: 0 0 0 3px var(--border-glow);
+}
+
+.table-search-input::placeholder {
+  color: var(--text-muted);
 }
 
 .table-meta-info {
@@ -67,7 +71,7 @@
   position: relative;
 }
 
-/* Custom Scrollbar for sleek UI */
+/* Custom Scrollbar with Lovely Pink Glow */
 .table-scroll-container::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -76,11 +80,11 @@
   background: var(--bg-subtle);
 }
 .table-scroll-container::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(244, 114, 182, 0.35);
   border-radius: 3px;
 }
 .table-scroll-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--primary);
 }
 
 /* Table Elements */
@@ -96,11 +100,11 @@
   position: sticky;
   top: 0;
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   color: var(--text-secondary);
   font-weight: 700;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-bottom: 2px solid var(--border-color);
   white-space: nowrap;
   z-index: 10;
@@ -108,24 +112,24 @@
 }
 
 .preview-data-table th.col-source-header {
-  color: var(--warning);
-  background: rgba(245, 158, 11, 0.08);
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.1);
 }
 
 .preview-data-table td {
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-primary);
   white-space: nowrap;
-  max-width: 240px;
+  max-width: 260px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .preview-data-table td.col-source-cell {
-  color: var(--warning);
+  color: #fb923c;
   font-weight: 500;
-  background: rgba(245, 158, 11, 0.03);
+  background: rgba(251, 146, 60, 0.04);
 }
 
 .preview-data-table tbody tr {
@@ -133,11 +137,11 @@
 }
 
 .preview-data-table tbody tr:hover {
-  background-color: var(--bg-card-hover);
+  background-color: rgba(255, 77, 148, 0.08);
 }
 
 .preview-data-table tbody tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.015);
+  background-color: rgba(255, 77, 148, 0.02);
 }
 
 .row-index-cell {
@@ -145,7 +149,7 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   text-align: center;
-  width: 36px;
+  width: 40px;
 }
 
 /* Pagination Control Bar */
@@ -173,9 +177,14 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  padding: 3px 6px;
+  padding: 3px 8px;
   font-size: 0.76rem;
   outline: none;
+  transition: border-color var(--trans-fast);
+}
+
+.page-size-dropdown:focus {
+  border-color: var(--border-focus);
 }
 
 .pagination-nav {
@@ -188,9 +197,10 @@
   background: var(--bg-main);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
   font-size: 0.76rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--trans-fast);
 }
@@ -199,18 +209,20 @@
   background: var(--bg-card-hover);
   border-color: var(--primary);
   color: var(--primary);
+  box-shadow: 0 2px 8px var(--primary-glow);
 }
 
 .page-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
 .page-btn.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
+  background: linear-gradient(135deg, #ff5e9c, #e62675);
+  border-color: transparent;
+  color: #ffffff;
   font-weight: 700;
+  box-shadow: 0 2px 8px var(--primary-glow);
 }
 
 .page-info-label {
