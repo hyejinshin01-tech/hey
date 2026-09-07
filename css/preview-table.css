@@ -1,25 +1,25 @@
 /* ==========================================================================
-   Preview Table & Data Inspector CSS
+   Preview Table & Data Inspector CSS (High Density & Performance)
    ========================================================================== */
 .table-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
 .table-search-box {
   position: relative;
   flex: 1;
-  min-width: 240px;
-  max-width: 380px;
+  min-width: 200px;
+  max-width: 320px;
 }
 
 .table-search-icon {
   position: absolute;
-  left: 12px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
@@ -28,12 +28,12 @@
 
 .table-search-input {
   width: 100%;
-  padding: 8px 12px 8px 36px;
+  padding: 6px 10px 6px 30px;
   background: var(--bg-main);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   outline: none;
   transition: all var(--trans-fast);
 }
@@ -44,11 +44,11 @@
 }
 
 .table-meta-info {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .table-meta-highlight {
@@ -59,25 +59,25 @@
 /* Data Table Scroll Container */
 .table-scroll-container {
   width: 100%;
-  max-height: 480px;
+  max-height: 440px;
   overflow: auto;
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: var(--bg-main);
   position: relative;
 }
 
 /* Custom Scrollbar for sleek UI */
 .table-scroll-container::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 .table-scroll-container::-webkit-scrollbar-track {
   background: var(--bg-subtle);
 }
 .table-scroll-container::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 .table-scroll-container::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
@@ -88,7 +88,7 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-align: left;
 }
 
@@ -100,7 +100,7 @@
   -webkit-backdrop-filter: blur(12px);
   color: var(--text-secondary);
   font-weight: 700;
-  padding: 10px 14px;
+  padding: 8px 10px;
   border-bottom: 2px solid var(--border-color);
   white-space: nowrap;
   z-index: 10;
@@ -113,11 +113,11 @@
 }
 
 .preview-data-table td {
-  padding: 9px 14px;
+  padding: 6px 10px;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-primary);
   white-space: nowrap;
-  max-width: 280px;
+  max-width: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -143,9 +143,9 @@
 .row-index-cell {
   color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-align: center;
-  width: 44px;
+  width: 36px;
 }
 
 /* Pagination Control Bar */
@@ -153,18 +153,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 14px;
-  padding-top: 10px;
+  margin-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--border-color);
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .pagination-size-select {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
+  gap: 6px;
+  font-size: 0.76rem;
   color: var(--text-muted);
 }
 
@@ -173,24 +173,24 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  padding: 4px 8px;
-  font-size: 0.8rem;
+  padding: 3px 6px;
+  font-size: 0.76rem;
   outline: none;
 }
 
 .pagination-nav {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .page-btn {
   background: var(--bg-main);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   cursor: pointer;
   transition: all var(--trans-fast);
 }
@@ -214,7 +214,7 @@
 }
 
 .page-info-label {
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   color: var(--text-secondary);
   margin: 0 4px;
 }

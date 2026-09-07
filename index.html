@@ -7,7 +7,7 @@
   <meta name="description" content="여러 개의 엑셀 파일을 업로드하면 동일한 컬럼 규격(헤더 구조)끼리 자동 인식하여 하나로 합쳐주는 초고속 노빌드 웹 애플리케이션">
   <meta name="keywords" content="엑셀 합치기, 엑셀 병합, 엑셀 자동 분류, 엑셀 파일 통합, Excel Merger">
 
-  <!-- Pretendard Korean & Inter Fonts -->
+  <!-- Pretendard Korean & JetBrains Mono Fonts -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,210 +25,169 @@
   <!-- Background Decorative Glowing Orbs -->
   <div class="bg-glow-orb bg-glow-1"></div>
   <div class="bg-glow-orb bg-glow-2"></div>
-  <div class="bg-glow-orb bg-glow-3"></div>
 
   <div class="app-container">
 
-    <!-- Top Navigation Header -->
+    <!-- Slim Top Navigation Header -->
     <header class="header">
       <div class="brand">
         <div class="brand-icon-wrapper">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
             <path d="M8 13h8"></path>
             <path d="M8 17h8"></path>
-            <path d="M10 9H8"></path>
           </svg>
         </div>
         <div class="brand-title">
-          <h1>ExcelMerge Pro <span class="badge-ver">v1.0 (No-Build)</span></h1>
-          <p>엑셀 파일들을 넣으면 동일 규격끼리 똑똑하게 묶어서 통합해 드립니다</p>
+          <h1>ExcelMerge Pro</h1>
+          <p>엑셀 파일 다중 자동 규격 분류 및 통합</p>
         </div>
       </div>
 
       <div class="header-actions">
-        <button id="sampleDataBtn" class="btn btn-accent btn-sm" title="테스트용 샘플 엑셀 파일 6개를 즉시 생성하여 체험합니다">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-          샘플 데이터로 즉시 체험
+        <button id="sampleDataBtn" class="btn btn-accent" title="테스트용 샘플 엑셀 파일들을 즉시 생성하여 체험합니다">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          샘플 데이터 체험
         </button>
-        <button id="clearAllBtn" class="btn btn-secondary btn-sm" title="모든 파일 및 작업 초기화">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+        <button id="clearAllBtn" class="btn btn-secondary" title="업로드된 파일 및 작업 초기화">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
           초기화
         </button>
         <button id="themeToggleBtn" class="btn btn-secondary btn-icon-only" title="테마 변경">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         </button>
       </div>
     </header>
 
-    <!-- Main Workflow Layout -->
-    <main>
+    <!-- 2-Column High Density Layout -->
+    <main class="dashboard-grid">
       
-      <!-- STEP 1: Upload Files -->
-      <section class="card-panel">
-        <div class="section-header">
-          <div class="section-title">
-            <span class="section-step-num">1</span>
-            <span>엑셀 파일 업로드 (다중 선택 가능)</span>
-          </div>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">.xlsx, .xls, .csv 지원</span>
-        </div>
-
-        <div id="dropzone" class="dropzone">
-          <input type="file" id="fileInput" multiple accept=".xlsx, .xls, .csv" />
-          <div class="dropzone-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-          </div>
-          <div class="dropzone-text-main">엑셀 파일들을 여기로 드래그하거나 클릭하여 선택하세요</div>
-          <div class="dropzone-text-sub">규격(컬럼)이 서로 달라도 괜찮습니다. 시스템이 알아서 분류합니다.</div>
-        </div>
-
-        <!-- Uploaded Files Grid -->
-        <div id="uploadedFilesContainer" class="uploaded-files-container" style="display: none;">
-          <div class="file-list-header">
-            <span>업로드된 파일 목록</span>
-            <span id="fileCountLabel" class="stat-val" style="font-size:0.85rem;">총 0개 파일</span>
-          </div>
-          <div id="filesGrid" class="files-grid">
-            <!-- File chips injected dynamically -->
-          </div>
-        </div>
-      </section>
-
-      <!-- STEP 2: Merge Options -->
-      <section class="card-panel">
-        <div class="section-header">
-          <div class="section-title">
-            <span class="section-step-num">2</span>
-            <span>병합 및 규격 분석 옵션</span>
-          </div>
-        </div>
-
-        <div class="options-grid">
-          
-          <div class="option-item">
-            <label class="option-title" for="optHeaderRow">헤더(컬럼명) 위치 행</label>
-            <div class="option-desc">컬럼 이름이 위치한 행 번호를 지정합니다.</div>
-            <input type="number" id="optHeaderRow" class="option-input" value="1" min="1" max="20" />
+      <!-- LEFT SIDEBAR: Upload + Options (Space Efficient) -->
+      <aside class="sidebar-column">
+        
+        <!-- Upload Card -->
+        <section class="card-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              <span>파일 업로드</span>
+            </div>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">.xlsx, .xls, .csv</span>
           </div>
 
-          <div class="option-item">
-            <label class="option-label-wrapper">
+          <div id="dropzone" class="dropzone">
+            <input type="file" id="fileInput" multiple accept=".xlsx, .xls, .csv" />
+            <div class="dropzone-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            </div>
+            <div class="dropzone-text-main">엑셀 파일들을 끌어다 놓으세요</div>
+            <div class="dropzone-text-sub">클릭하여 파일 다중 선택 가능</div>
+          </div>
+
+          <!-- Uploaded Files List -->
+          <div id="uploadedFilesContainer" class="uploaded-files-container" style="display: none;">
+            <div class="file-list-header">
+              <span>업로드 목록</span>
+              <span id="fileCountLabel">총 0개</span>
+            </div>
+            <div id="filesGrid" class="files-grid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Options Card -->
+        <section class="card-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>병합 옵션</span>
+            </div>
+          </div>
+
+          <div class="options-compact-grid">
+            <div class="option-row-inline">
+              <span class="option-inline-label">헤더(컬럼) 행 번호</span>
+              <input type="number" id="optHeaderRow" class="option-input-compact" value="1" min="1" max="20" />
+            </div>
+
+            <div class="option-row-inline">
+              <span class="option-inline-label">시트 처리 방식</span>
+              <select id="optSheetMode" class="option-select-compact">
+                <option value="first">첫 번째 시트</option>
+                <option value="all">모든 시트</option>
+              </select>
+            </div>
+
+            <label class="option-checkbox-row">
               <input type="checkbox" id="optAddSourceCol" class="option-checkbox" checked />
-              <div>
-                <div class="option-title">출처 파일명 열 추가</div>
-                <div class="option-desc">병합된 결과의 맨 앞에 [출처_파일명] 열을 추가하여 데이터 출처를 기록합니다.</div>
-              </div>
+              <span class="option-checkbox-text">출처 파일명 열 추가 (권장)</span>
             </label>
-          </div>
 
-          <div class="option-item">
-            <label class="option-label-wrapper">
+            <label class="option-checkbox-row">
               <input type="checkbox" id="optAddSheetCol" class="option-checkbox" />
-              <div>
-                <div class="option-title">출처 시트명 열 추가</div>
-                <div class="option-desc">데이터가 추출된 엑셀 시트 이름을 열로 추가합니다.</div>
-              </div>
+              <span class="option-checkbox-text">출처 시트명 열 추가</span>
             </label>
-          </div>
 
-          <div class="option-item">
-            <label class="option-label-wrapper">
+            <label class="option-checkbox-row">
               <input type="checkbox" id="optRemoveDuplicates" class="option-checkbox" />
-              <div>
-                <div class="option-title">중복 행 자동 제거</div>
-                <div class="option-desc">모든 열 값이 완전히 동일한 중복 데이터를 1건만 유지합니다.</div>
-              </div>
+              <span class="option-checkbox-text">중복 행 자동 제거</span>
             </label>
-          </div>
 
-          <div class="option-item">
-            <label class="option-label-wrapper">
+            <label class="option-checkbox-row">
               <input type="checkbox" id="optSkipEmptyRows" class="option-checkbox" checked />
-              <div>
-                <div class="option-title">빈 행 자동 제외</div>
-                <div class="option-desc">데이터가 없는 빈 행을 병합 대상에서 제외합니다.</div>
-              </div>
+              <span class="option-checkbox-text">빈 행 자동 제외</span>
             </label>
           </div>
+        </section>
 
-          <div class="option-item">
-            <label class="option-title" for="optSheetMode">시트 처리 방식</label>
-            <div class="option-desc">다중 시트 파일 처리 범위를 선택합니다.</div>
-            <select id="optSheetMode" class="option-select">
-              <option value="first">첫 번째 시트만 처리 (권장)</option>
-              <option value="all">모든 시트 각각 분석 및 병합</option>
-            </select>
+      </aside>
+
+      <!-- RIGHT MAIN: Results & Groups List (Main Space) -->
+      <section class="card-panel results-panel">
+        
+        <!-- Results Header / Toolbar -->
+        <div id="groupsSummaryBar" class="results-toolbar" style="display: none;">
+          <div class="results-stats-text">
+            <span>규격: <span id="totalGroupsCount" class="stat-highlight">0개</span></span>
+            <span>합산: <span id="totalMergedRows" class="stat-highlight">0개</span> 행</span>
+            <span id="batchGroupCount" style="display:none;">0개</span>
+            <span id="batchTotalRows" style="display:none;">0</span>
           </div>
-
-        </div>
-      </section>
-
-      <!-- STEP 3: Detected Groups & Results -->
-      <section class="card-panel">
-        <div class="section-header">
-          <div class="section-title">
-            <span class="section-step-num">3</span>
-            <span>자동 감지된 규격 그룹 및 통합 결과</span>
+          
+          <div class="results-actions">
+            <button id="downloadMultiSheetBtn" class="btn btn-secondary" title="모든 규격을 하나의 엑셀에 시트별로 분리 저장">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              통합 엑셀 (시트별)
+            </button>
+            <button id="downloadZipBtn" class="btn btn-primary" title="각 규격별 엑셀 파일들을 ZIP 파일 하나로 일괄 압축 다운로드">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              전체 ZIP 다운로드
+            </button>
           </div>
         </div>
+
+        <!-- Hidden container for compatibility with existing UI refs if any -->
+        <div id="batchActionsBar" style="display: none;"></div>
 
         <!-- Empty State -->
         <div id="emptyState" class="empty-state">
           <div class="empty-state-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           </div>
-          <div class="empty-state-text">파일을 업로드하면 동일한 규격끼리 자동 분류되어 여기에 표시됩니다.</div>
-          <p style="font-size: 0.8rem; margin-top: 6px; color: var(--text-muted);">상단의 '샘플 데이터로 즉시 체험' 버튼을 눌러 테스트해보세요!</p>
-        </div>
-
-        <!-- Groups Summary Bar -->
-        <div id="groupsSummaryBar" class="groups-summary-bar" style="display: none;">
-          <div class="summary-stats">
-            <div class="stat-chip">
-              <span>분류된 총 규격 수:</span>
-              <span id="totalGroupsCount" class="stat-val">0개</span>
-            </div>
-            <div class="stat-chip">
-              <span>총 병합 데이터 행 수:</span>
-              <span id="totalMergedRows" class="stat-val">0개</span>
-            </div>
-          </div>
-          <div style="font-size: 0.82rem; color: var(--text-secondary);">
-            💡 그룹명을 클릭하여 다운로드될 파일명을 직접 변경할 수 있습니다.
-          </div>
+          <div class="empty-state-text">왼쪽에서 엑셀 파일들을 업로드하면 규격별로 자동 분류됩니다.</div>
+          <p style="font-size: 0.76rem; margin-top: 4px; color: var(--text-muted);">상단의 '샘플 데이터 체험' 버튼으로 즉시 테스트해보세요.</p>
         </div>
 
         <!-- Groups List -->
         <div id="groupsContainer" class="groups-list">
-          <!-- Dynamically filled with group cards -->
+          <!-- Dynamically populated -->
         </div>
 
       </section>
 
     </main>
-
-    <!-- Global Floating Sticky Batch Actions Bar -->
-    <div id="batchActionsBar" class="batch-actions-bar" style="display: none;">
-      <div class="batch-info">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-        <div>
-          <div class="batch-info-title">전체 병합 준비 완료 (<span id="batchGroupCount">0개</span> 규격)</div>
-          <div class="batch-info-desc">총 <span id="batchTotalRows" style="font-weight:700; color:var(--primary);">0</span>개의 행 데이터가 깔끔하게 정리되었습니다.</div>
-        </div>
-      </div>
-      <div class="batch-buttons">
-        <button id="downloadMultiSheetBtn" class="btn btn-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-          1개 엑셀로 통합 (시트별 분리)
-        </button>
-        <button id="downloadZipBtn" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          전체 ZIP 압축 다운로드
-        </button>
-      </div>
-    </div>
 
   </div>
 
@@ -237,11 +196,11 @@
     <div class="modal-card">
       <div class="modal-header">
         <div class="modal-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           <span id="modalTitle">병합 데이터 미리보기</span>
         </div>
         <button id="modalCloseBtn" class="modal-close-btn" title="닫기">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
 
@@ -249,31 +208,27 @@
         <!-- Toolbar: Search & Meta -->
         <div class="table-toolbar">
           <div class="table-search-box">
-            <svg class="table-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <svg class="table-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             <input type="text" id="modalTableSearch" class="table-search-input" placeholder="데이터 내용 실시간 검색..." />
           </div>
           <div class="table-meta-info">
-            <span>총 행 수: <span id="modalTotalRows" class="table-meta-highlight">0</span></span>
-            <span>필터링된 행 수: <span id="modalFilteredRows" class="table-meta-highlight">0</span></span>
+            <span>총 행: <span id="modalTotalRows" class="table-meta-highlight">0</span></span>
+            <span>필터: <span id="modalFilteredRows" class="table-meta-highlight">0</span></span>
           </div>
         </div>
 
         <!-- Scrollable Table -->
         <div class="table-scroll-container">
           <table class="preview-data-table">
-            <thead id="modalTableHead">
-              <!-- Dynamically populated -->
-            </thead>
-            <tbody id="modalTableBody">
-              <!-- Dynamically populated -->
-            </tbody>
+            <thead id="modalTableHead"></thead>
+            <tbody id="modalTableBody"></tbody>
           </table>
         </div>
 
         <!-- Pagination Controls -->
         <div class="pagination-container">
           <div class="pagination-size-select">
-            <span>페이지당 표시:</span>
+            <span>표시:</span>
             <select id="modalPageSize" class="page-size-dropdown">
               <option value="10">10개</option>
               <option value="25" selected>25개</option>
@@ -290,16 +245,14 @@
       </div>
 
       <div class="modal-footer">
-        <div style="font-size:0.8rem; color:var(--text-muted);">
-          * 미리보기 테이블은 가상화 페이징을 통해 대용량 데이터도 빠르게 조회할 수 있습니다.
+        <div style="font-size:0.75rem; color:var(--text-muted);">
+          * 가상화 페이징으로 대용량 데이터도 빠르게 조회됩니다.
         </div>
-        <div style="display:flex; gap:10px;">
-          <button id="modalExportCsvBtn" class="btn btn-secondary btn-sm">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <div style="display:flex; gap:8px;">
+          <button id="modalExportCsvBtn" class="btn btn-secondary">
             CSV 내보내기
           </button>
-          <button id="modalExportExcelBtn" class="btn btn-primary btn-sm">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <button id="modalExportExcelBtn" class="btn btn-primary">
             이 규격 엑셀 다운로드
           </button>
         </div>
@@ -311,9 +264,7 @@
   <div id="toastContainer" class="toast-container"></div>
 
   <!-- Third Party Libraries via CDN -->
-  <!-- 1. SheetJS (xlsx.full.min.js) -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <!-- 2. JSZip for batch zip downloading -->
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 
   <!-- Application Modules -->

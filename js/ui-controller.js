@@ -390,32 +390,29 @@ class UIController {
         <div class="group-card-header">
           <div class="group-title-area">
             <span class="group-badge">규격 ${index + 1}</span>
-            <input type="text" class="group-name-input" value="${group.customName}" title="클릭하여 그룹명 변경" />
+            <input type="text" class="group-name-input" value="${group.customName}" title="클릭하여 그룹명 수정" />
+            <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">(총 ${group.totalRows.toLocaleString()}행 · 파일 ${group.items.length}개)</span>
           </div>
           <div class="group-card-actions">
-            <button class="btn btn-secondary btn-sm preview-btn" data-group-id="${group.id}">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <button class="btn btn-secondary preview-btn" data-group-id="${group.id}">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               미리보기
             </button>
-            <button class="btn btn-primary btn-sm export-excel-btn" data-group-id="${group.id}">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <button class="btn btn-primary export-excel-btn" data-group-id="${group.id}">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               엑셀 다운로드
             </button>
           </div>
         </div>
 
         <div class="group-columns-wrapper">
-          <div class="group-columns-title">포함된 열 규격 (${displayHeaders.length}개):</div>
           <div class="column-tags">${colTagsHtml}</div>
         </div>
 
         <div class="group-files-info">
           <div class="group-files-list">
-            <span style="font-size:0.8rem; font-weight:600; color:var(--text-secondary);">포함된 파일 (${group.items.length}개):</span>
+            <span style="font-size:0.72rem; font-weight:600; color:var(--text-muted);">포함 파일:</span>
             ${filesBadgesHtml}
-          </div>
-          <div class="group-stats-meta">
-            총 합산 <span style="color:var(--primary); font-size:1.05rem;">${group.totalRows.toLocaleString()}</span>개 행
           </div>
         </div>
       `;
